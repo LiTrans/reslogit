@@ -1,0 +1,17 @@
+model_type: MNL
+choices:
+  - auto
+  - bike
+  - transit
+  - walk
+  - auto+transit
+  - other_mode
+  - other_combi
+batch_size: 32 # fixed
+learning_rate: 0.001
+n_layers: 16
+n_epochs: 1000
+patience: 5000
+patience_increase: 2
+improvement_threshold: 0.995
+
