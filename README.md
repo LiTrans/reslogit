@@ -1,8 +1,8 @@
 # ResLogit
 Residual Logit (ResLogit) models are a family of machine learning based choice models under-developement in the [Laboratory of Innovations in Transportation (LiTrans)](https://litrans.ca/). So far, two versions have been developed:
-## Standard ResLogit
-
-## Ordinal Reslogit
-
+## 1. Standard ResLogit
+Wong, Melvin, and Bilal Farooq. "[ResLogit: A residual neural network logit model for data-driven choice modelling.](https://doi.org/10.1016/j.trc.2021.103050)" Transportation Research Part C: Emerging Technologies 126 (2021): 103050. 
+## 2. Ordinal Reslogit
+https://arxiv.org/abs/2204.09187
 # Implementations
 The original implementation 
