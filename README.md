@@ -7,3 +7,8 @@ Kamal, Kimia, and Bilal Farooq. "[Ordinal-ResLogit: Interpretable Deep Residual 
 
 # Implementation
 The original implementation of ResLogit was done using [Theano](https://github.com/Theano/Theano) in Python. However, as the development of Theano stopped, we have moved to [PyTorch](https://pytorch.org/) in Python as the active development platform. The old Theano version of the code can be found in [arxiv](https://github.com/LiTrans/reslogit/tree/master/arxiv).
+
+# Contributors
+- [Kimia Kamal](https://github.com/kimiak91)
+- [Melvin Wong](https://github.com/mwong009)
+- [Bilal Farooq](https://github.com/billjee)
