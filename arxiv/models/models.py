@@ -203,7 +203,7 @@ class OrdinalResLogit(Logit):
         self.batch_size = batch_size 
         
         #define the ResNet architecture.
-        self.resnet_layer = ResNet(self.n_choices, self.n_choices, n_layers=16)
+        self.resnet_layer = ResNet(self.n_choices, self.n_choices, n_layers=self.n_layers)
         for i in range(self.n_layers):
             self.params.extend(self.resnet_layer.layers[i].params)
             
@@ -278,7 +278,7 @@ class ResLogit(Logit):
         self.n_layers = n_layers
         
         #define the ResNet architecture.
-        self.resnet_layer = ResNet(self.n_choices, self.n_choices, n_layers=16)
+        self.resnet_layer = ResNet(self.n_choices, self.n_choices, n_layers=self.n_layers)
         for i in range(self.n_layers):
             self.params.extend(self.resnet_layer.layers[i].params)
         
@@ -297,3 +297,8 @@ class ResLogit(Logit):
         self.output = nn.functional.softmax(pre_softmax, dim =1)
         
         self.output_pred = torch.argmax(self.output, dim =1)
+
+    def predict(self, input):
+        self.fit(input)
+        # argmax gives 0..K-1; +1 maps back to the 1..K category labels
+        return self.output_pred + 1

@@ -1,8 +1,10 @@
-model_type: OrdinalResLogit
-choices:
-  - low
-  - high
-batch_size: 64 # fixed
+model_type: ResLogit #choose ResLogit OR OrdinalResLogit (case sensitive)
+choices: #define chocie set (low: 1, medium: 2, high: 3 etc.)
+  - 1 
+  - 2
+
+# define hyperparameters
+batch_size: 2 
 learning_rate: 0.001
 n_layers: 16
 n_epochs: 1000
@@ -10,3 +12,9 @@ patience: 30
 patience_increase: 3
 improvement_threshold: 0.995
 
+# training & optimizer settings 
+train_split: 0.7        # fraction of observations used for training
+valid_freq: 200         # validate every N minibatches (capped at n_train_batches)
+rmsprop_alpha: 0.9      # RMSprop smoothing constant (was hardcoded)
+rmsprop_eps: 1.0e-10    # RMSprop epsilon (was hardcoded)
+weight_decay: 0         # L2 weight decay (was hardcoded)
